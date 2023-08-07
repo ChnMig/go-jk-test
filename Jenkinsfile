@@ -9,7 +9,7 @@ demo:pipeline {
     stage('insert') {
       steps {
         sh '''
-        go mod tidy
+        go mod vendor
         go build -o main main.go
         '''
      	veinmindScanner([$class: 'AgentConfig', agentVersion: 'v2.0.0', ruleId: 0])
